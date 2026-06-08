@@ -1,0 +1,48 @@
+@import url('https://fonts.googleapis.com/css2?family=Shippori+Mincho:wght@400;500;600;700&family=Inter:wght@300;400;500;600&family=DM+Mono:wght@300;400&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --red: #9B1B30;
+  --red-light: #c0392b22;
+  --navy: #1A2744;
+  --navy-light: #1A274415;
+  --white: #FAFAF8;
+  --off-white: #F2F0EB;
+  --ink: #1a1a1a;
+  --muted: #6b7280;
+  --border: #e5e0d8;
+  --gold: #C9985A;
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+
+body {
+  background: var(--white);
+  color: var(--ink);
+  font-family: 'Inter', sans-serif;
+  overflow-x: hidden;
+}
+
+::selection { background: var(--red); color: white; }
+
+::-webkit-scrollbar { width: 4px; }
+::-webkit-scrollbar-track { background: var(--off-white); }
+::-webkit-scrollbar-thumb { background: var(--red); border-radius: 2px; }
+
+.japanese { font-family: 'Shippori Mincho', serif; }
+
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(20px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+
+.fade-up { animation: fadeUp 0.5s ease both; }
+.fade-in { animation: fadeIn 0.4s ease both; }
