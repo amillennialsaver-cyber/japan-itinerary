@@ -485,16 +485,21 @@ export default function Home() {
             <div key={activeDay} className="fade-up">
               <div style={{ marginBottom: "2rem" }}>
                 <WeekBadge week={Math.ceil(day.day / 7)} />
-                <div style={{ display: "flex", alignItems: "flex-start", gap: "1rem", flexWrap: "wrap" }}>
-                  <span style={{ fontSize: "2.8rem", lineHeight: 1 }}>{day.emoji}</span>
-                  </div>
-                    <div style={{ display: "flex", alignItems: "center", gap: "0.75rem", flexWrap: "wrap", marginBottom: "0.25rem" }}>
-                      <span style={{ fontFamily: "'DM Mono', monospace", fontSize: "0.65rem", color: "var(--muted)", letterSpacing: "0.1em" }}>DAY {day.day} · {day.date}</span>
-                      <span style={{ fontSize: "0.65rem", padding: "0.2rem 0.6rem", background: regionColor + "18", color: regionColor, borderRadius: 2, fontFamily: "'DM Mono', monospace", fontWeight: 700, border: `1px solid ${regionColor}33` }}>{day.tag}</span>
+                <div style={{ display: "flex", alignItems: "flex-start", justifyContent: "space-between", gap: "1rem" }}>
+                  <div style={{ display: "flex", alignItems: "flex-start", gap: "1rem", flex: 1 }}>
+                    <span style={{ fontSize: "2.8rem", lineHeight: 1 }}>{day.emoji}</span>
+                    <div style={{ flex: 1 }}>
+                      <div style={{ display: "flex", alignItems: "center", gap: "0.75rem", flexWrap: "wrap", marginBottom: "0.25rem" }}>
+                        <span style={{ fontFamily: "'DM Mono', monospace", fontSize: "0.65rem", color: "var(--muted)", letterSpacing: "0.1em" }}>DAY {day.day} · {day.date}</span>
+                        <span style={{ fontSize: "0.65rem", padding: "0.2rem 0.6rem", background: regionColor + "18", color: regionColor, borderRadius: 2, fontFamily: "'DM Mono', monospace", fontWeight: 700, border: `1px solid ${regionColor}33` }}>{day.tag}</span>
+                      </div>
+                      <h1 className="japanese" style={{ fontSize: "clamp(1.6rem, 3vw, 2.4rem)", fontWeight: 700, color: "var(--ink)", lineHeight: 1.1 }}>{day.city}</h1>
+                      <p style={{ color: "var(--muted)", fontSize: "0.85rem", marginTop: "0.3rem" }}>{day.region} · Japan</p>
                     </div>
-                    <h1 className="japanese" style={{ fontSize: "clamp(1.6rem, 3vw, 2.4rem)", fontWeight: 700, color: "var(--ink)", lineHeight: 1.1 }}>{day.city}</h1>
-                    <p style={{ color: "var(--muted)", fontSize: "0.85rem", marginTop: "0.3rem" }}>{day.region} · Japan</p>
                   </div>
+                  {activeDay === 1 && (
+                    <img src="/couple.png" alt="Tills & Harry's Japan 2027" style={{ width: 190, height: 190, objectFit: "cover", borderRadius: 8, border: "2px solid var(--border)", boxShadow: "0 4px 20px rgba(0,0,0,0.1)", flexShrink: 0 }} />
+                  )}
                 </div>
                 <div style={{ height: 3, background: `linear-gradient(to right, ${regionColor}, transparent)`, marginTop: "1rem", maxWidth: 500, borderRadius: 2 }} />
               </div>
