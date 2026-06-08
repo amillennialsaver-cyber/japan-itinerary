@@ -487,7 +487,7 @@ export default function Home() {
                 <WeekBadge week={Math.ceil(day.day / 7)} />
                 <div style={{ display: "flex", alignItems: "flex-start", gap: "1rem", flexWrap: "wrap" }}>
                   <span style={{ fontSize: "2.8rem", lineHeight: 1 }}>{day.emoji}</span>
-                  <div style={{ flex: 1 }}>
+                  </div>
                     <div style={{ display: "flex", alignItems: "center", gap: "0.75rem", flexWrap: "wrap", marginBottom: "0.25rem" }}>
                       <span style={{ fontFamily: "'DM Mono', monospace", fontSize: "0.65rem", color: "var(--muted)", letterSpacing: "0.1em" }}>DAY {day.day} · {day.date}</span>
                       <span style={{ fontSize: "0.65rem", padding: "0.2rem 0.6rem", background: regionColor + "18", color: regionColor, borderRadius: 2, fontFamily: "'DM Mono', monospace", fontWeight: 700, border: `1px solid ${regionColor}33` }}>{day.tag}</span>
